@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7413173965856819280}
   - component: {fileID: 1157638178181668508}
   - component: {fileID: 5035098161119510717}
-  - component: {fileID: 2996812576897370040}
+  - component: {fileID: 4494912323688989398}
   m_Layer: 0
   m_Name: Barrel0
   m_TagString: Untagged
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 4231952920511919007}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: -4.01, z: 0}
+  m_LocalPosition: {x: 8.03, y: -0.07, z: 0}
   m_LocalScale: {x: 0.48433855, y: 0.45125842, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -135,7 +135,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3.5699954, y: 3.852871}
   m_EdgeRadius: 0
---- !u!114 &2996812576897370040
+--- !u!114 &4494912323688989398
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,6 +144,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4231952920511919007}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4924e0fda5f8804f8de4274c8841ea8, type: 3}
+  m_Script: {fileID: 11500000, guid: e8866d40e591a9240baa7babe634db44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 5

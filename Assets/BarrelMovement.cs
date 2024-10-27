@@ -1,10 +1,9 @@
 using UnityEngine;
 
-// Behavior for Barrel obstacle
-public class Movement : MonoBehaviour
+public class BarrelMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    private float deleteZone = -13f;
+    public float moveSpeed = 5;
+    private float deleteZone = -13;
 
     void Start() { }
 
