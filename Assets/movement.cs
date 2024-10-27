@@ -1,18 +1,19 @@
 using UnityEngine;
 
-public class movement : MonoBehaviour
+// Behavior for Barrel obstacle
+public class Movement : MonoBehaviour
 {
-    public float moveSpeed = 5;
-    private float deleteZone = -13;
+    public float moveSpeed = 5f;
+    private float deleteZone = -13f;
 
-    void Start() {
-        
-    }
+    void Start() { }
 
-    void Update() {
+    void Update()
+    {
         transform.position += Vector3.left * moveSpeed * Time.deltaTime;
 
-        if (transform.position.x < deleteZone) {
+        if (transform.position.x < deleteZone)
+        {
             Destroy(gameObject);
         }
     }
