@@ -385,7 +385,17 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      hulking_knight_0: -6829015885701053343
+      hulking_knight_1: 6040846946442898302
+      hulking_knight_2: 6069860917502845325
+      hulking_knight_3: 8269643079139469828
+      hulking_knight_4: -3500901260027756087
+      hulking_knight_5: -849113351862212119
+      hulking_knight_6: 6342558102895500958
+      hulking_knight_7: 8329965870377266733
+      hulking_knight_8: -2350299947125609065
+      hulking_knight_9: 4050993696825479388
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
