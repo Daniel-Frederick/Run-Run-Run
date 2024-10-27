@@ -1,45 +1,36 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
-public class barrelSpawner : MonoBehaviour
-{
+// Spawns Barrels
+public class BarrelSpawner : MonoBehaviour {
     public LogicManager logicManager;
     public GameObject Barrel;
-    public float spawnRate = 2;
-    private float timer = 0;
-    public float heightOffset = 1;
+    public float SpawnRate = 2;
+    private float _timer = 0;
+    public float HeightOffset = 4;
 
-    void Start() {
-        
-    }
+    void Start() { }
 
     void Update() { // Fix the Spawn rates
-        //if (logicManager.gameTimer <= 10) { // Check amout of time passed
-        //    if (logicManager.resetTimer >= logicManager.timerInterval) { // Inital spawn rate
-        //        spawnBarrel();
-        //    }
-        //} else if (logicManager.gameTimer <= 20) {
-        //    if (logicManager.resetTimer >= logicManager.timerInterval) { // Increase spawn rate
-        //        spawnBarrel();
-        //    }
-        //} else { // Max spawn rate
-        //    if (logicManager.resetTimer >= logicManager.timerInterval) {
-        //        spawnBarrel();
-        //    }
-        //}
 
-        if (timer < spawnRate) {
-            timer += Time.deltaTime;
-        } else {
-            spawnBarrel();
-            timer = 0;
+        if (_timer < SpawnRate) {
+            _timer += Time.deltaTime;
+        }
+        else {
+            SpawnBarrel();
+            _timer = 0;
         }
 
+        if (logicManager.gameTimer % 2 == 1) {
+            Debug.Log("logicManager.gameTimer: " + logicManager.gameTimer);
+        }
 
     }
 
-    private void spawnBarrel() {
-        float highestY = transform.position.y + heightOffset;
-        float lowestY = transform.position.y - heightOffset;
+    private void SpawnBarrel() {
+        float highestY = transform.position.y + HeightOffset;
+        float lowestY = transform.position.y - HeightOffset;
         Instantiate(Barrel, new Vector3(transform.position.x, Random.Range(lowestY, highestY), 0) , transform.rotation);
     }
 }
