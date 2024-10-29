@@ -1,11 +1,26 @@
+using System;
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BarrelMovement : MonoBehaviour
 {
-    public float moveSpeed = 5;
-    private float deleteZone = -13;
+    public LogicManager logicManager;
+    public float moveSpeed = 5f;
+    private float deleteZone = -13f;
 
-    void Start() { }
+    void Start()
+    {
+            GameObject logicObject = GameObject.FindGameObjectWithTag("Logic");
+            if (logicObject != null)
+            {
+                logicManager = logicObject.GetComponent<LogicManager>();
+            }
+            else
+            {
+                Debug.LogError("LogicManager GameObject with tag 'Logic' not found in the scene.");
+            }
+    }
 
     void Update()
     {
@@ -15,5 +30,17 @@ public class BarrelMovement : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("OnCollisionEnter2D went off ");
+        logicManager.gameOver();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        Debug.Log("Trigger overlap detected with " + collider.gameObject.name);
+        logicManager.gameOver();
     }
 }

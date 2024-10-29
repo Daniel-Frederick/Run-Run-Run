@@ -2,10 +2,13 @@ using System.Globalization;
 using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 // Manages the UI
 public class LogicManager : MonoBehaviour
 {
+    public GameObject gameOverScreen;
+    
     public int gameTimer = 0; // The Timer
     public Text scoreText;
     public double timerInterval = 1.0;
@@ -22,5 +25,15 @@ public class LogicManager : MonoBehaviour
 
             resetTimer = 0;
         }
+    }
+
+    public void restartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void gameOver()
+    {
+        gameOverScreen.SetActive(true);
     }
 }

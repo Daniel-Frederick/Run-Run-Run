@@ -25,15 +25,11 @@ public class BarrelSpawner : MonoBehaviour
             SpawnBarrel();
             _timer = 0f;
         }
-
-        if (logicManager.gameTimer % 2 == 1)
-        {
-            Debug.Log("logicManager.gameTimer: " + logicManager.gameTimer);
-        }
     }
 
     private void SpawnBarrel()
     {
+        // TODO: Find out if there are variables for the left, top, right, and bottom line of the screen
         float highestY = transform.position.y + heightOffset;
         float lowestY = transform.position.y - heightOffset;
         Instantiate(barrel, new Vector3(transform.position.x, Random.Range(lowestY, highestY), 0), transform.rotation);
