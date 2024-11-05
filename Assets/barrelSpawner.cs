@@ -1,13 +1,15 @@
 using System;
+using UnityEditor.Rendering;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 // Spawns Barrels
 public class BarrelSpawner : MonoBehaviour
 {
-    public LogicManager logicManager;
+    public LogicManager logicManager; // has timer
     public GameObject barrel;
     public float spawnRate = 2f;
+    // TODO: Remove the _timer variable and use logicManager's timer instead
     private float _timer = 0f;
     public float heightOffset = 4f;
 
